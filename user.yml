@@ -1,0 +1,16 @@
+- name: User
+  hosts: all
+  become: true
+  vars:
+    component: user
+  tasks:
+    - name: NodeJs Setup
+      ansible.builtin.import_tasks: nodejs.yml
+
+
+
+#component=user
+#schema_type=mongodb
+#source common.sh
+#
+#nodejs
