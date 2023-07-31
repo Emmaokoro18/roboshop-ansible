@@ -1,0 +1,16 @@
+- name: Roboshop Project - Catalogue
+  hosts: all
+  become: true
+  vars:
+    component: catalogue
+  tasks:
+    - name: NodeJs Setup
+      ansible.builtin.import_tasks: nodejs.yaml
+
+
+
+#component=catalogue
+#schema_type=mongodb
+#source common.sh
+
+#nodejs
