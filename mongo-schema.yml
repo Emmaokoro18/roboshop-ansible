@@ -9,7 +9,7 @@
     state: installed
 
 - name: Load Schema
-  ansible.builtin.shell: mongo --host mongodb.bigetech.online </app/schema/${{component}}.js
+  ansible.builtin.shell: mongo --host mongodb.bigetech.online </app/schema/{{component}}.js
 
 
 
