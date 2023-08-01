@@ -2,13 +2,15 @@
   hosts: all
   become: true
   tasks:
+    - name: Disable existing MySQL version
+      ansible.builtin.shell: yum module disable mysql -y
+
     - name: configure MySQL repo yum
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
 
-    - name: Disable existing MySQL version
-      ansible.builtin.shell: yum module disable mysql -y
+
 
     - name: Install MySQL community server
       ansible.builtin.yum:
